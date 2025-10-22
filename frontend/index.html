@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart KYC Checker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Smart KYC Checker 🤖</h1>
+        <p>Upload two documents (e.g., Aadhar and PAN card) to check for matching details.</p>
+        <div class="caution-box">
+            <strong>⚠️ Important Guidelines:</strong>
+            <ul>
+                <li><b>For Images (.jpg, .png):</b> Use clear, well-lit photos. Blurry, dark, or low-quality images will fail.</li>
+                <li><b>For PDFs (.pdf):</b> Only use text-based PDFs (like an e-Aadhar). Scanned photos saved as a PDF are <b>not supported</b>.</li>
+            </ul>
+        </div>
+        <form id="kyc-form">
+            <div class="file-input-wrapper">
+                <label for="doc1">Document 1:</label>
+                <input type="file" id="doc1" name="doc1" accept="image/*, application/pdf" required>
+            </div>
+            
+            <div class="file-input-wrapper">
+                <label for="doc2">Document 2:</label>
+                <input type="file" id="doc2" name="doc2" accept="image/*, application/pdf" required>
+            </div>
+            
+            <button type="submit" id="submit-btn">Check Documents</button>
+        </form>
+        
+        <div id="loader" class="hidden"></div>
+        
+        <div id="results-container" class="hidden">
+            <h2>Check Results</h2>
+            <pre id="results-json"></pre>
+        </div>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>
