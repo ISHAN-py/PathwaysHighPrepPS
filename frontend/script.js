@@ -5,11 +5,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const resultsContainer = document.getElementById("results-container");
     const resultsJson = document.getElementById("results-json");
 
-    // The URL of your FastAPI backend
+
     const API_URL = "http://127.0.0.1:8000/check-kyc/";
 
     kycForm.addEventListener("submit", async (e) => {
-        e.preventDefault(); // Prevent default form submission
+        e.preventDefault(); 
 
         const doc1Input = document.getElementById("doc1");
         const doc2Input = document.getElementById("doc2");
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        // Show loader and disable button
+
         loader.classList.remove("hidden");
         resultsContainer.classList.add("hidden");
         submitBtn.disabled = true;
@@ -35,9 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const response = await fetch(API_URL, {
                 method: "POST",
                 body: formData,
-                // Note: Don't set 'Content-Type' header
-                // The browser will automatically set it to 'multipart/form-data'
-                // with the correct boundary.
             });
 
             const data = await response.json();
@@ -51,7 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
             displayResults(data);
 
         } catch (error) {
-            // Handle network errors or API errors
             displayResults({
                 status: "ERROR",
                 message: "Failed to connect to the API or an error occurred.",
@@ -70,7 +66,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const formattedJson = JSON.stringify(data, null, 2);
         resultsJson.textContent = formattedJson;
 
-        // Add color coding based on status
         if (data.status === "FAILED" || data.status === "ERROR") {
             resultsJson.style.color = "#d32f2f"; // Red
         } else if (data.status === "PASSED") {
