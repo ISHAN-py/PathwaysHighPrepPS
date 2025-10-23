@@ -75,7 +75,6 @@ button:disabled {
     cursor: not-allowed;
 }
 
-/* Results */
 #results-container {
     margin-top: 2rem;
     text-align: left;
@@ -95,7 +94,7 @@ button:disabled {
 
 pre {
     padding: 1rem;
-    white-space: pre-wrap; /* Allows text to wrap */
+    white-space: pre-wrap; 
     word-wrap: break-word;
     font-family: "Courier New", Courier, monospace;
     font-size: 0.85rem;
@@ -114,13 +113,11 @@ pre {
     height: 40px;
     animation: spin 1s linear infinite;
 }
-/* ... (all your existing styles) ... */
 
-/* =================== ADD THIS BLOCK =================== */
 .caution-box {
-    background-color: #fffbeb; /* Light yellow */
-    border: 1px solid #fde68a; /* Darker yellow */
-    color: #713f12; /* Dark brown text */
+    background-color: #fffbeb; 
+    border: 1px solid #fde68a; 
+    color: #713f12; 
     padding: 1rem;
     border-radius: 8px;
     margin-bottom: 1.5rem;
@@ -141,7 +138,6 @@ pre {
 .caution-box li:last-child {
     margin-bottom: 0;
 }
-/* ================= END OF NEW BLOCK ================= */
 
 @keyframes spin {
     0% { transform: rotate(0deg); }
