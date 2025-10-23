@@ -1,4 +1,4 @@
-Here's a README draft that's concise and has a more human tone.
+
 
 -----
 
